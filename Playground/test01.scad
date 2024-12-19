@@ -1,9 +1,6 @@
-use <../Library/RoundedBox.scad>
-use <../Library/RoundedPlate.scad>
+use <../Library/Boxes.scad>
 
 $fn = $preview ? 40 : 100;
 
-RoundedBox(h = 40, w = 165, d = 120, r = 5, wth = 2, bth = 2);
+Box(width = 180, depth = 180, height = 45, roundedCorners = 0, innerRoundedCorners = 2, innerRadius = 5, bottomThickness = 2, wallThickness = 2, rows = [50,50], columns = [50,50]);
 
-//translate([0, 0, -2])
-//    RoundedPlate(h = 2.001, w = 116, d = 71, r = 5);
