@@ -7,8 +7,6 @@
  *              (http://opensource.org/licenses/BSD-2-Clause)
  */
 
-$fn = $preview ? 40 : 100;
-
 module SimpleBlock(width = 120, depth = 75, height = 50) {
 
     cube([width, depth, height], false);
@@ -48,8 +46,11 @@ module DoubleRoundedBlock(width = 120, depth = 75, height = 50, radius = 5) {
     }
 }
 
-module Box( width = 120, depth = 75, height = 30, bottomThickness = 3, wallThickness = 2, roundedCorners = 2, 
-            radius = 5, rows = [60,40], columns = [20,40,40], innerRoundedCorners = 2, innerRadius = 3,
+module Box( width = 120, depth = 75, height = 30, 
+            bottomThickness = 3, wallThickness = 2, 
+            roundedCorners = 2, radius = 5, 
+            rows = [60,40], columns = [20,40,40], 
+            innerRoundedCorners = 2, innerRadius = 3,
             stackingHeight = 2, stackingTolerance = 0.2) {
 
     xsum = width - wallThickness * (len(columns) + 1);
@@ -90,18 +91,16 @@ module Box( width = 120, depth = 75, height = 30, bottomThickness = 3, wallThick
             translate([hStackOff, hStackOff, height - vStackOff])
                 if (roundedCorners == 0)
                     SimpleBlock(width - 2*hStackOff, depth - 2*hStackOff, 2*vStackOff);
-                else if (roundedCorners == 1)
+                else if (roundedCorners == 1 || roundedCorners == 2)
                     RoundedBlock(width - 2*hStackOff, depth - 2*hStackOff, 2*vStackOff, radius);
-                else if  (roundedCorners == 2) 
-                    DoubleRoundedBlock(width - 2*hStackOff, depth - 2*hStackOff, 2*vStackOff, radius);
     }
 
     if (stackingHeight) {
 
         translate([hStackOff, hStackOff, -stackingHeight])
-            if (innerRoundedCorners == 0)
-                SimpleBlock(width - 2*hStackOff, depth - 2*hStackOff, vStackOff);
-            else if (innerRoundedCorners == 1 || innerRoundedCorners == 2)
-                RoundedBlock(width - 2*hStackOff, depth - 2*hStackOff, vStackOff, radius);
+            if (roundedCorners == 0)
+                SimpleBlock(width - 2*hStackOff, depth - 2*hStackOff, stackingHeight + bottomThickness/2);
+            else if (roundedCorners == 1 || roundedCorners == 2)
+                RoundedBlock(width - 2*hStackOff, depth - 2*hStackOff, stackingHeight + bottomThickness/2, radius);
     }
 }

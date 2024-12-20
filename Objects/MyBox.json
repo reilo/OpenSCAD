@@ -1,0 +1,58 @@
+{
+    "parameterSets": {
+        "Box 18x18 3x4": {
+            "bottomThickness": "2",
+            "cols": "[33, 33, 34, 0]",
+            "colsEffective": "[50, 50]",
+            "depth": "180",
+            "height": "45",
+            "innerRadius": "3",
+            "innerRoundingType": "2",
+            "radius": "5",
+            "roundingType": "1",
+            "rows": "[25, 25, 25, 25]",
+            "rowsEffective": "[40, 60, 0, 0]",
+            "stackingHeight": "2",
+            "stackingTolerance": "0",
+            "wallThickness": "2",
+            "width": "180"
+        },
+        "Box 18x18 3x3": {
+            "bottomThickness": "2",
+            "cols": "[33, 33, 34, 0]",
+            "colsEffective": "[50, 50]",
+            "depth": "180",
+            "height": "45",
+            "innerRadius": "3",
+            "innerRoundingType": "2",
+            "radius": "5",
+            "roundingType": "1",
+            "rows": "[33, 33, 34, 0]",
+            "rowsEffective": "[40, 60, 0, 0]",
+            "stackingHeight": "2",
+            "stackingTolerance": "0",
+            "wallThickness": "2",
+            "width": "180"
+        },
+        "Box 18x18 4x4": {
+            "bottomThickness": "2",
+            "cols": "[25, 25, 25, 25]",
+            "colsEffective": "[50, 50]",
+            "depth": "180",
+            "height": "45",
+            "innerRadius": "3",
+            "innerRoundingType": "2",
+            "radius": "5",
+            "roundingType": "1",
+            "rows": "[25, 25, 25, 25]",
+            "rowsEffective": "[40, 60, 0, 0]",
+            "stackingHeight": "2",
+            "stackingTolerance": "0",
+            "wallThickness": "2",
+            "width": "180"
+        }
+    },
+    "fileFormatVersion": "1",
+    "parameterSets": "",
+    "parameterSets": ""
+}
