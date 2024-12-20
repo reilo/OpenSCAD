@@ -1,5 +1,5 @@
 /*
- * Library:     RoundedPlate.scad
+ * Project:     RoundedPlate.scad
  * Version:     1.0
  * Author:      Reinhard Loch
  * Copyright:   2024

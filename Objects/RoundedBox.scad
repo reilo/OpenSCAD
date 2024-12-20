@@ -37,6 +37,8 @@ wth = 2; // [1:10]
 bth = 3; // [1:10]
 
 
+module RoundedBox(h = h, w = w, d = d, r = r, wth = wth, bth = bth) {
+
 translate([-w/2 + r, -d/2 + r, 0])
 
     difference() {
@@ -47,9 +49,14 @@ translate([-w/2 + r, -d/2 + r, 0])
         };
     
         translate([wth, wth, bth])
+
             minkowski() {
                 cube([w - 2*r - 2*wth, d - 2*r - 2*wth, h/2]);
                 cylinder(h = h/2, r = r);
             };
 
     };
+    
+};
+
+RoundedBox();
